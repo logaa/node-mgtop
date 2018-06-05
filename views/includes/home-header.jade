@@ -1,0 +1,30 @@
+header.am-g.am-g-fixed.blog-fixed.blog-text-center.blog-header
+    .am-u-sm-8.am-u-sm-centered
+        h2.am-hide-sm-only Logaa blog
+hr
+
+nav.am-g.am-g-fixed.blog-fixed.blog-nav
+    button.am-topbar-btn.am-topbar-toggle.am-btn.am-btn-sm.am-btn-success.am-show-sm-only.blog-button(data-am-collapse="{target: '#blog-collapse'}")
+        span.am-icon-bars
+    #blog-collapse.am-collapse.am-topbar-collapse
+        ul.am-nav.am-nav-pills.am-topbar-nav
+            -if (nav === 'home')
+                li.am-active
+                    a(href="/") Home
+            -else
+                li
+                    a(href="/") Home
+            -if (nav === 'archives')
+                li.am-active
+                    a(href="/archives") Archives
+            -else
+                li
+                    a(href="/archives") Archives
+            li
+                a(href="#") Link
+            li
+                a(href="#") About
+        form.am-topbar-form.am-topbar-right.am-form-inline(role="search")
+            .am-form-group
+                input.am-form-field.am-input-sm(type="text", placeholder="Search")
+hr

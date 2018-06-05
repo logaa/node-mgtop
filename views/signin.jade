@@ -1,0 +1,43 @@
+include ./includes/head
+body
+    header
+        .log-header
+            h1
+                a(href="/") Logaa blog
+        .log-re
+            button.am-btn.am-btn-default.am-radius.log-button(type="button") Register
+    .log
+        .am-g
+            .am-u-lg-3.am-u-md-6.am-u-sm-8.am-u-sm-centered.log-content
+                h1.log-title.am-animation-slide-top Logaa blog
+                br
+                form#log-form.am-form
+                    .am-input-group.am-radius.am-animation-slide-left
+                        input#doc-vld-email-2-1.am-radius(type="email", data-validation-message="Please enter a valid email address", placeholder="Email")
+                        span.am-input-group-label.log-icon.am-radius
+                            i.am-icon-user.am-icon-sm.am-icon-fw
+                    br
+                    .am-input-group.am-animation-slide-left.log-animation-delay
+                        input.am-form-field.am-radius.log-input(type="password", placeholder="Password")
+                        span.am-input-group-label.log-icon.am-radius
+                            i.am-icon-lock.am-icon-sm.am-icon-fw
+                    br
+                    button.am-btn.am-btn-primary.am-btn-block.am-btn-lg.am-radius.am-animation-slide-bottom.log-animation-delay(type="submit") Sign in
+                    p.am-animation-slide-bottom.log-animation-delay
+                        a(href="#") Forgot password?
+                    .am-btn-group.am-animation-slide-bottom.log-animation-delay-b
+                        p Use a third-party sign in
+                        a.am-btn.am-btn-secondary.am-btn-sm(href="#")
+                            i.am-icon-github.am-icon-sm
+                            |  Github
+                        a.am-btn.am-btn-success.am-btn-sm(href="#")
+                            i.am-icon-google-plus-square.am-icon-sm
+                            |  Google+
+                        a.am-btn.am-btn-primary.am-btn-sm(href="#")
+                            i.am-icon-stack-overflow.am-icon-sm
+                            |  stackOverflow
+        footer.log-footer
+            | © 2018 By Logaa
+    script(src='/javascripts/jquery.min.js')
+    script(src='/amaze/dist/js/amazeui.js')
+    script(src='/amaze/dist/js/app.js')

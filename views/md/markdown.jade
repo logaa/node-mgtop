@@ -1,0 +1,23 @@
+extends ../layout
+block link
+    link(rel="stylesheet", href="/md/css/editormd.css")
+block content
+    include ../includes/home-header
+    #test-editormd
+        textarea(style = "display:none;")= context
+block script
+    script(src='/md/editormd.js')
+    script(type="text/javascript").
+        var testEditor;
+        $(function () {
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 840,
+                //readOnly: true,
+                syncScrolling : "single",
+                flowChart: true,
+                emoji: true,
+                langs: 'en',
+                path: "/md/lib/"
+            });
+        });

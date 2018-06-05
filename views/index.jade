@@ -1,0 +1,118 @@
+extends layout
+
+block content
+  include includes/home-header
+  //- banner
+  .am-g.am-g-fixed.blog-fixed.am-u-sm-centered.blog-article-margin
+    .am-slider.am-slider-b1(data-am-widget="slider", data-am-slider='{"controlNav":false}')
+      ul.am-slides
+        li
+          img(src="/amaze/dist/i/b1.jpg")
+          .blog-slider-desc.am-slider-desc
+            .blog-text-center.blog-slider-con
+              span
+                a.blog-color(href="") Article  
+              h1.blog-h-margin
+                a(href="") 总在思考一句积极的话
+              p
+                | 那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
+              span.blog-bor 2018/10/9
+        li
+          img(src="/amaze/dist/i/b2.jpg")
+          .am-slider-desc.blog-slider-desc
+            .blog-text-center.blog-slider-con
+              span
+                a.blog-color(href="") Article  
+              h1.blog-h-margin
+                a(href="") 总在思考一句积极的话
+              p
+                | 那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
+              span 2018/10/9
+        li
+          img(src="/amaze/dist/i/b3.jpg")
+          .am-slider-desc.blog-slider-desc
+            .blog-text-center.blog-slider-con
+              span
+                a.blog-color(href="") Article  
+              h1.blog-h-margin
+                a(href="") 总在思考一句积极的话
+              p
+                | 那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
+              span 2015/10/9
+        li
+          img(src="/amaze/dist/i/b2.jpg")
+          .am-slider-desc.blog-slider-desc
+            .blog-text-center.blog-slider-con
+              span
+                a.blog-color(href="") Article  
+              h1.blog-h-margin
+                a(href="") 总在思考一句积极的话
+              p
+                | 那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
+              span 2018/10/9
+  //- content
+  .am-g.am-g-fixed.blog-fixed
+    .am-u-md-8.am-u-sm-12
+      -each val in content
+        article.am-g.blog-entry-article
+          .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-img
+            img.am-u-sm-6(src=val.cover, alt="")
+          .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-text
+            span
+              a.blog-color(href="")= val.author_username 
+            span= " " + val.created
+            h1
+              a(href="/md/summary/" + val.id + '/README.md')= val.title
+            p= val.description
+            p
+              a.blog-continue(href="") continue reading
+      ul.am-pagination
+        li.am-pagination-prev
+          a(href= prev) « Prev
+        li.am-pagination-next
+          a(href= next) Next »
+    .am-u-md-4.am-u-sm-12.blog-sidebar
+      .blog-sidebar-widget.blog-bor
+        h2.blog-text-center.blog-title
+          span About ME
+        img.blog-entry-img(src="/amaze/dist/i/f14.jpg", alt="about me")
+        p 妹纸
+        p
+          | 我是妹子UI，中国首个开源 HTML5 跨屏前端框架
+        p 我不想成为一个庸俗的人。十年百年后，当我们死去，质疑我们的人同样死去，后人看到的是裹足不前、原地打转的你，还是一直奔跑、走到远方的我？
+      .blog-sidebar-widget.blog-bor
+        h2.blog-text-center.blog-title
+          span Contact ME
+        p
+          a(href="")
+            span.am-icon-qq.am-icon-fw.am-primary.blog-icon
+          a(href="")
+            span.am-icon-github.am-icon-fw.blog-icon
+          a(href="")
+            span.am-icon-weibo.am-icon-fw.blog-icon
+          a(href="")
+            span.am-icon-reddit.am-icon-fw.blog-icon
+          a(href="")
+            span.am-icon-weixin.am-icon-fw.blog-icon
+      .blog-clear-margin.blog-sidebar-widget.blog-bor.am-g
+        h2.blog-title
+          span TAG cloud
+        .am-u-sm-12.blog-clear-padding
+          a.blog-tag(href="") amaze
+          a.blog-tag(href="") 妹纸 UI
+          a.blog-tag(href="") HTML5
+          a.blog-tag(href="") 这是标签
+          a.blog-tag(href="") Impossible
+          a.blog-tag(href="") 开源前端框架
+      .blog-sidebar-widget.blog-bor
+        h2.blog-title
+          span 么么哒
+        ul.am-list
+          li
+            a(href="#") 每个人都有一个死角， 自己走不出来，别人也闯不进去。
+          li
+            a(href="#") 我把最深沉的秘密放在那里。
+          li
+            a(href="#") 你不懂我，我不怪你。
+          li
+            a(href="#") 每个人都有一道伤口， 或深或浅，盖上布，以为不存在。

@@ -1,0 +1,75 @@
+extends ../includes/head
+block link
+    link(rel="stylesheet", href="/md/css/editormd.css")
+    body
+        #my-offcanvas.am-offcanvas
+            .am-offcanvas-bar(style = "background: #fff;")
+                #preview-summary
+                    textarea(id= "md-summary", style = "display:none;")= summary
+        .icon-top-left(style="position: fixed;top: 10px;left: 15px;")
+            a(href="javascript:void(0)", data-am-offcanvas="{target: '#my-offcanvas', effect: 'push'}")
+                span.am-icon-align-justify
+            a(href="/", style="margin-left: 10px;")
+                span.am-icon-home
+        .icon-bottom-left(style="position: fixed;bottom: 10px;left: 10px;")
+            a(href="#", style="margin-left: 10px")
+                span.am-icon-chevron-left
+        .icon-bottom-right(style="position: fixed;bottom: 10px;right: 10px;")
+            a(href="#", style="margin-left: 10px")
+                span.am-icon-chevron-right
+        #preview-context(style="padding:4%")
+            textarea(id= "md-context", style = "display:none;")= context
+        //- amaze js
+        script(src='/javascripts/jquery.min.js')
+        script(src='/amaze/dist/js/amazeui.js')
+        script(src='/amaze/dist/js/amazeui.ie8polyfill.js')
+        //- md js
+        script(src='/md/lib/marked.min.js')
+        script(src='/md/lib/prettify.min.js')
+        script(src='/md/lib/raphael.min.js')
+        script(src='/md/lib/underscore.min.js')
+        script(src='/md/lib/sequence-diagram.min.js')
+        script(src='/md/lib/flowchart.min.js')
+        script(src='/md/lib/jquery.flowchart.min.js')
+        script(src='/md/editormd.js')
+        script(type="text/javascript").
+            $(function () {
+               editormd.markdownToHTML("preview-summary", {
+                    markdown: $('#md-summary').text(),
+                    htmlDecode: "style,script,iframe",
+                    tocm: true,
+                    emoji: true,
+                    taskList: true,
+                    tex: true,
+                    flowChart: true,
+                    sequenceDiagram: true
+               });
+               $('#preview-summary li').each(function (i, n) {
+                    const href = '/md/summary/' + #{postsId} + '/' + $($(n).find('a')[0]).attr('href');
+                    $($(n).find('a')[0]).attr('href', href);
+                    if(window.location.href.indexOf(href) > -1){
+                        let left = href, right = href;
+                        if(i != 0){
+                           left = $($('#preview-summary li')[i-1]).find('a:first').attr('href');
+                        }
+                        if (i != $('#preview-summary li').length - 1) {
+                            right = '/md/summary/' + #{postsId} + '/' + $($('#preview-summary li')[i+1]).find('a:first').attr('href');
+                        }
+                        $('.icon-bottom-left a').attr('href', left);
+                        $('.icon-bottom-right a').attr('href', right)
+                    }
+               });
+               editormd.markdownToHTML("preview-context", {
+                    markdown: $('#md-context').text(),
+                    htmlDecode: "style,script,iframe",
+                    tocm: true,
+                    emoji: true,
+                    taskList: true,
+                    tex: true,
+                    flowChart: true,
+                    sequenceDiagram: true
+               });
+            });
+            $('.icon-top-left a:first').click(function () {
+                $('#my-offcanvas').offCanvas('open');
+            });
