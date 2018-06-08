@@ -1,6 +1,9 @@
 include ./includes/head
 body
   block content
+  #amz-toolbar(style="right: 280px;position: fixed;z-index: 999;bottom: 10px;")
+    a#amz-go-top.am-icon-btn.am-icon-arrow-up.am-active(style="", href="#top", title="Top")
+    a.am-icon-faq.am-icon-btn.am-icon-arrow-left(onclick="window.history.go(-1)" style="display: block;margin-top: 10px;", title="Back")
   footer.blog-footer
     .am-g.am-g-fixed.blog-fixed.am-u-sm-centered.blog-footer-padding
     //-

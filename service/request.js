@@ -9,7 +9,8 @@ module.exports.get = function(url, callback){
         if (!error && response.statusCode == 200) {
             callback(body);
         }else{
-            console.error(error);
+            console.error('ERROR: ' + error);
+            callback(body);
         }
     })
 };

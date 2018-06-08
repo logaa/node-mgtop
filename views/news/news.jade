@@ -1,0 +1,21 @@
+extends ../layout
+block content
+    include ../includes/home-header
+    .am-g.am-g-fixed.blog-fixed
+        .am-u-md-12.am-u-sm-12
+            -each val in content
+                article.am-g.blog-entry-article
+                    .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-img
+                        img.am-u-sm-9(src=val.img, alt="")
+                    .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-text
+                        span= val.date
+                        h1(data-id= val.id)
+                            a(href="/news/find-one/" + val.id)= val.title
+                        p= val.content
+                        p
+                            a.blog-continue(href="") continue reading
+            ul.am-pagination
+                li.am-pagination-prev
+                    a(href= prev) « Prev
+                li.am-pagination-next
+                    a(href= next) Next »

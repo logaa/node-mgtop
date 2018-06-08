@@ -53,12 +53,12 @@ block content
                 span 2018/10/9
   //- content
   .am-g.am-g-fixed.blog-fixed
-    .am-u-md-8.am-u-sm-12
+    .am-u-md-12.am-u-sm-12
       -each val in content
         article.am-g.blog-entry-article
-          .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-img
+          .am-u-lg-4.am-u-md-12.am-u-sm-12.blog-entry-img
             img.am-u-sm-6(src=val.cover, alt="")
-          .am-u-lg-6.am-u-md-12.am-u-sm-12.blog-entry-text
+          .am-u-lg-8.am-u-md-12.am-u-sm-12.blog-entry-text
             span
               a.blog-color(href="")= val.author_username 
             span= " " + val.created

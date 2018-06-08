@@ -8,27 +8,45 @@ nav.am-g.am-g-fixed.blog-fixed.blog-nav
         span.am-icon-bars
     #blog-collapse.am-collapse.am-topbar-collapse
         ul.am-nav.am-nav-pills.am-topbar-nav
+            //- books
             -if (nav === 'books')
                 li.am-active
                     a(href="/") Books
             -else
                 li
                     a(href="/") Books
+            //- archives
             -if (nav === 'archives')
                 li.am-active
                     a(href="/archives") Archives
             -else
                 li
                     a(href="/archives") Archives
-            li
-                a(href="#") Link
-
+            //- live
+            -if (nav === 'live')
+                 li.am-active
+                     a(href="/live") Live
+            -else
+                 li
+                     a(href="/live") Live
+            //- news
+            -if (nav === 'news')
+                li.am-active
+                    a(href="/news/index") News
+            -else
+                li
+                    a(href="/news/index") News
+            //- markdown
             -if (nav === 'markdown')
                 li.am-active
                     a(href="/md/markdown") Markdown
             -else
                 li
                     a(href="/md/markdown") Markdown
+            //- link
+            li
+                a(href="#") Link
+            //- about
             li
                 a(href="#") About
         form.am-topbar-form.am-topbar-right.am-form-inline(role="search")
