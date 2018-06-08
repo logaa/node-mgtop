@@ -8,12 +8,12 @@ nav.am-g.am-g-fixed.blog-fixed.blog-nav
         span.am-icon-bars
     #blog-collapse.am-collapse.am-topbar-collapse
         ul.am-nav.am-nav-pills.am-topbar-nav
-            -if (nav === 'home')
+            -if (nav === 'books')
                 li.am-active
-                    a(href="/") Home
+                    a(href="/") Books
             -else
                 li
-                    a(href="/") Home
+                    a(href="/") Books
             -if (nav === 'archives')
                 li.am-active
                     a(href="/archives") Archives
@@ -22,6 +22,13 @@ nav.am-g.am-g-fixed.blog-fixed.blog-nav
                     a(href="/archives") Archives
             li
                 a(href="#") Link
+
+            -if (nav === 'markdown')
+                li.am-active
+                    a(href="/md/markdown") Markdown
+            -else
+                li
+                    a(href="/md/markdown") Markdown
             li
                 a(href="#") About
         form.am-topbar-form.am-topbar-right.am-form-inline(role="search")

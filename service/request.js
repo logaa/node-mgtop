@@ -1,6 +1,6 @@
 var request = require('request');
 
-// const baseDomain = 'http://localhost';
+// const baseDomain = 'http://localhost:8080/web';
 const baseDomain = 'http://116.255.159.171:8080/web';
 
 module.exports.get = function(url, callback){
